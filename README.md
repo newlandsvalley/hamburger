@@ -1,0 +1,7 @@
+# Hamburger
+
+This is an experiment in how to implement responsive design in a PureScript/Halogen application where the application architecture pretty much follows that of Thomas Honeyman's [Real World Halogen](https://github.com/thomashoneyman/purescript-halogen-realworld).  The key to responsiveness is the *hamburger* icon - when the browser window reduces to a small size, the menu bar collapses to a small bar which contains only this icon.  Clicking it toggles a drop down menu which sits above the currently selected page (the hamburger transitioning between three horizontal bars and a cross).  Once the user selects a menu option, the menu disappears.
+
+This implementation chooses to handle the responsiveness entirely in CSS which uses a mobile-first approach.  The HTML for both the small and large menu bars is generated in the *Headers* module where visibility for a given window width is governed by *visible*, *hiddden* or *flex* CSS properties. These properties can be reset to initial values or toggled by means of a small javascript function wrapped in the *Toggle* module.  The reset function is called whenever the user chooses a new route and the toggle function is called whenever the user clicks the hamburger icon (in whichever form) which generates a *ToggleHamburgerMenu* action in the Router module. There is no impact on any Halogen state itself.
+
+The CSS is hand-crafted but picks up a few pointers from Tailwind.

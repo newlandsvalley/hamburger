@@ -1,0 +1,10 @@
+/node_modules/
+/output/
+/generated-docs/
+/.psc-package/
+/.spago/
+/dist/app.js
+/.psc*
+/.purs*
+/.psa*
+package-lock.json

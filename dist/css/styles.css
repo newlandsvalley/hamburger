@@ -1,0 +1,122 @@
+
+
+.nav {
+    color: #cccc99; /* light greenish grey */
+}
+
+/* the children of this div separate the LHS and RHS elements.  Separate them with flex. */
+.navdiv {
+    display: flex;
+}
+
+/* the navigation default (small screens) is just the app name and the hamburger icon */
+.hamburger-nav {
+    display: flex;
+    background-color: #224422; /* hard dark green */
+    color: #cccc99; /* light greenish grey */
+	list-style-type: none;  /* don't display the bullets in the nav bar */
+    height: 40px;
+    padding-top: 10px;
+}
+
+/* the hamburger navigation div element for small screens */
+.hamburger-navdiv {
+    display: flex;
+}
+
+.hamburger-appname {
+    font-size: 1.5em;
+}
+
+/* set the hamburger icon towards the RHS of the bar */
+.hamburger-icon {
+    margin-left: auto;
+    margin-right: 20px;
+    padding-top: 6px;
+}
+
+/* hamburger menu activation */
+.hamburger-btn {
+    background-color: #224422; /* hard dark green */
+}
+
+/* hamburger menu deactivation */
+.hamburger-btn-cross {
+    background-color: #224422; /* hard dark green */
+}
+
+/* don't display the main navigation bar on default small screens */
+.main-menu {
+    background-color: #224422; /* hard dark green */
+	overflow: hidden;
+    display: none;
+	list-style-type: none;  /* don't display the bullets in the nav bar */
+    height: 40px;
+}
+
+/* don't display the hamburger menu by default - it needs to be switched on by the icon*/
+.hamburger-menu {
+    display: none;
+	list-style-type: none;  /* don't display the bullets in the nav bar */
+    flex-direction: column;
+    font-weight: bold;
+}
+
+/* links in the navigation bar big screens */
+.navitem>a {
+    color: #cccc99; /* light greenish grey */
+    display: inline;
+    margin: 0 10px 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;    
+    transition-delay: 250ms;
+    transition-timing-function: ease-in-out;
+} 
+
+/* links in the navigation bar small (mobile) screens */
+.mobnavitem>a {
+    color: #224422; /* hard dark green */
+    display: inline;
+    margin: 0 10px 0 10px;
+    font-size: 1.5em;
+    text-decoration: none;    
+    transition-delay: 250ms;
+    transition-timing-function: ease-in-out;
+}
+
+.navitem>a:hover {
+    color: white;
+}
+
+.mobnavitem>a:hover {
+    color: #cccc99; /* light greenish grey */
+}
+
+/* allow visibility on mobile devices to be toggled easily.  This hides the display  */
+.hidden {
+    display: none;
+}
+
+/* allow visibility on mobile devices to be toggled easily.  This shows the display in flex mode */
+.flex {
+    display: flex;
+}
+
+
+/* on larger screens, deactivate the hamburger stuff and activate the normal navigation bar */
+@media (min-width: 600px) {
+    .hamburger-menu {
+      display: none;
+    }
+
+    .hamburger-nav {
+      display: none
+    }
+
+    .main-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+  }
